@@ -21,7 +21,7 @@ const ErrorMessages = {
   NO_DURATION: 'You need to set duration before you can start/stop the progress bar.'
 };
 
-customElements.define('progress-bar', class extends HTMLElement {
+class ProgressBar extends HTMLElement {
   connectedCallback () {
     const sDOM = this.attachShadow({ mode: 'closed' });
 
@@ -41,7 +41,7 @@ customElements.define('progress-bar', class extends HTMLElement {
   handleClick (event) {
     const percent = this.getRelativePercMouseEvent(event);
 
-    document.dispatchEvent(new CustomEvent('player:seek', {
+    document.dispatchEvent(new CustomEvent('progress-bar:seek', {
       detail: {
         percent
       }
@@ -99,4 +99,6 @@ customElements.define('progress-bar', class extends HTMLElement {
 
     this.animation.pause();
   }
-});
+}
+
+customElements.define('progress-bar', ProgressBar);
