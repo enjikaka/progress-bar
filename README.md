@@ -1,0 +1,24 @@
+# <progress-bar>
+
+A small 60 FPS smooth progress bar. Usig the Web Animation API.
+
+## API
+
+### Inputs
+
+| Method | Description | Related media event |
+| --- | --- | --- |
+| `set duration` | Set the duration of the animation. | `durationchange` |
+| `set playbackRate` | Set the playbackRate of the animation. | |
+| `start()` | Start the animation. | `play` |
+| `stop()` | Stop the animation. | `pause` / `ended` |
+
+### Outputs
+
+| CustomEvent | Description | event.detail keys |
+| --- | --- | --- |
+| `progress-bar:seek` | Sends the position to seek to in percent. | `percent`
+
+## Other useful information
+
+The colour of the progress is styled by the `currentColor` CSS variable. That means that the parent of `<progress-bar>` controls the colour of the progress via its `color` prop in CSS.
