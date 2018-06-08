@@ -1,4 +1,4 @@
-# <progress-bar>
+# `<progress-bar>`
 
 A small 60 FPS smooth progress bar. Usig the Web Animation API.
 
