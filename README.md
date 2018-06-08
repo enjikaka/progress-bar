@@ -8,10 +8,10 @@ A small 60 FPS smooth progress bar. Usig the Web Animation API.
 
 | Method | Description | Related media event |
 | --- | --- | --- |
-| `set duration` | Set the duration of the animation. | `durationchange` |
+| `set duration` | Set the duration of the animation. | [`durationchange`](https://developer.mozilla.org/en-US/docs/Web/Events/durationchange) |
 | `set playbackRate` | Set the playbackRate of the animation. | [`ratechange`](https://developer.mozilla.org/en-US/docs/Web/Events/ratechange) |
-| `start()` | Start the animation. | `play` |
-| `stop()` | Stop the animation. | `pause` / `ended` |
+| `start()` | Start the animation. | [`play`](https://developer.mozilla.org/en-US/docs/Web/Events/play) |
+| `stop()` | Stop the animation. | [`pause`](https://developer.mozilla.org/en-US/docs/Web/Events/pause) / [`ended`](https://developer.mozilla.org/en-US/docs/Web/Events/ended) |
 
 ### Outputs
 
