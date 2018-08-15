@@ -40,7 +40,7 @@ class ProgressBar extends HTMLElement {
     this.wrapper = sDOM.querySelector('#wrapper');
     this.indicator = sDOM.querySelector('#indicator');
 
-    this.wrapper.addEventListener('click', event => this.handleClick(event), false);
+    this.wrapper.addEventListener('click', this.handleClick.bind(this), false);
   }
 
   /**
@@ -81,14 +81,17 @@ class ProgressBar extends HTMLElement {
   set duration (duration) {
     this.animationDuration = duration * 1000;
 
-    this.animation = this.indicator.animate([
+    /** @type {Keyframe[]} */
+    const keyframes = ([
       {
         transform: 'translateX(-100%)'
       },
       {
-        transform: 'translateX(0%)'
+        tansform: 'translateX(0%)'
       }
-    ], {
+    ]);
+
+    this.animation = this.indicator.animate(keyframes, {
       duration: this.animationDuration,
       iterations: 1
     });
