@@ -56,7 +56,9 @@ class ProgressBar extends HTMLElement {
 
     document.dispatchEvent(new CustomEvent('progress-bar:seek', { detail }));
 
-    this.animation.currentTime = this.animationDuration * percent;
+    if (this.animation) {
+      this.animation.currentTime = this.animationDuration * percent;
+    }
   }
 
   /**
