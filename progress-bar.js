@@ -1,3 +1,4 @@
+// @ts-ignore
 const css = `
   #wrapper {
     width: 100%;
@@ -40,7 +41,11 @@ class ProgressBar extends HTMLElement {
     this.wrapper = sDOM.querySelector('#wrapper');
     this.indicator = sDOM.querySelector('#indicator');
 
-    this.wrapper.addEventListener('click', event => this.handleClick(event), false);
+    this.wrapper.addEventListener('click', event => {
+      if (event instanceof MouseEvent) {
+        this.handleClick(event);
+      }
+    }, false);
   }
 
   /**
@@ -82,12 +87,10 @@ class ProgressBar extends HTMLElement {
     this.animationDuration = duration * 1000;
 
     this.animation = this.indicator.animate([
-      {
-        transform: 'translateX(-100%)'
-      },
-      {
-        transform: 'translateX(0%)'
-      }
+      // @ts-ignore
+      { transform: 'translateX(-100%)' },
+      // @ts-ignore
+      { transform: 'translateX(0%)' }
     ], {
       duration: this.animationDuration,
       iterations: 1
