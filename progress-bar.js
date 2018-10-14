@@ -61,7 +61,9 @@ class ProgressBar extends HTMLElement {
 
     document.dispatchEvent(new CustomEvent('progress-bar:seek', { detail }));
 
-    this.animation.currentTime = this.animationDuration * percent;
+    if (this.animation) {
+      this.animation.currentTime = this.animationDuration * percent;
+    }
   }
 
   /**
@@ -86,12 +88,17 @@ class ProgressBar extends HTMLElement {
   set duration (duration) {
     this.animationDuration = duration * 1000;
 
-    this.animation = this.indicator.animate([
-      // @ts-ignore
-      { transform: 'translateX(-100%)' },
-      // @ts-ignore
-      { transform: 'translateX(0%)' }
-    ], {
+    /** @type {Keyframe[]} */
+    const keyframes = ([
+      {
+        transform: 'translateX(-100%)'
+      },
+      {
+        tansform: 'translateX(0%)'
+      }
+    ]);
+
+    this.animation = this.indicator.animate(keyframes, {
       duration: this.animationDuration,
       iterations: 1
     });
