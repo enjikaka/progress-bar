@@ -94,7 +94,7 @@ class ProgressBar extends HTMLElement {
         transform: 'translateX(-100%)'
       },
       {
-        tansform: 'translateX(0%)'
+        transform: 'translateX(0%)'
       }
     ]);
 
