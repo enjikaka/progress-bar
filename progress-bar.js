@@ -22,7 +22,7 @@ const ErrorMessages = {
   NO_DURATION: 'You need to set duration before you can start/stop the progress bar.'
 };
 
-class ProgressBar extends HTMLElement {
+export default class ProgressBar extends HTMLElement {
   /**
    * Renders the progress bar to a shadow DOM, caches references to the wrapper
    * && indicator elements and adds a click handler to the wrapper element for
