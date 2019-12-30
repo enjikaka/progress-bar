@@ -61,9 +61,7 @@ export default class ProgressBar extends HTMLElement {
 
     document.dispatchEvent(new CustomEvent('progress-bar:seek', { detail }));
 
-    if (this.animation) {
-      this.animation.currentTime = this.animationDuration * percent;
-    }
+    this.currentTime = this.animationDuration * percent;
   }
 
   /**
@@ -116,17 +114,23 @@ export default class ProgressBar extends HTMLElement {
   }
 
   /**
+   * Set current time with miliseconds.
+   * @memberof ProgressBar
+   */
+  set currentTime (currentTime) {
+    if (this.animation) {
+      this.animation.currentTime = currentTime;
+    }
+  }
+
+  /**
    * Starts the animation if duration is defined.
    *
    * @throws Will throw an error if duration is not set.
    */
-  start (currentTime) {
+  start () {
     if (!this.animation) {
       throw new Error(ErrorMessages.NO_DURATION);
-    }
-
-    if (currentTime) {
-      this.animation.currentTime = currentTime;
     }
 
     this.animation.play();
