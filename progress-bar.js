@@ -120,9 +120,13 @@ export default class ProgressBar extends HTMLElement {
    *
    * @throws Will throw an error if duration is not set.
    */
-  start () {
+  start (currentTime) {
     if (!this.animation) {
       throw new Error(ErrorMessages.NO_DURATION);
+    }
+
+    if (currentTime) {
+      this.animation.currentTime = currentTime;
     }
 
     this.animation.play();
