@@ -1,5 +1,5 @@
 {
-  "name": "progress-bar",
+  "name": "@enjikaka/progress-bar",
   "version": "1.0.0",
   "description": "A small 60 FPS smooth progress bar. Usig the Web Animation API.",
   "main": "progress-bar.js",
