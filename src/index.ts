@@ -34,6 +34,10 @@ const ErrorMessages = {
 		"You need to set duration before you can start/stop the progress bar.",
 };
 
+/**
+ * Progress bar component that can be used to show the progress of a video or audio element.
+ * Running in 60 FPS using the Web Animations API.
+ */
 export default class ProgressBar extends HTMLElement {
 	#wrapper: HTMLDivElement;
 	#indicator: HTMLDivElement;
