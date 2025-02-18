@@ -1,0 +1,27 @@
+{
+  "name": "@enjikaka/progress-bar",
+  "version": "",
+  "description": "A small 60 FPS smooth progress bar. Usig the Web Animation API.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enjikaka/progress-bar.git"
+  },
+  "author": "Jeremy Karlsson <karlsson@jeremy.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enjikaka/progress-bar/issues"
+  },
+  "homepage": "https://github.com/enjikaka/progress-bar#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "esbuild": "^0.25.0",
+    "http-server": "^14.1.1",
+    "typescript": "^5.7.3"
+  },
+  "exports": {
+    ".": "./index.js"
+  },
+  "browser": "./index.js",
+  "type": "module",
+  "types": "./index.d.ts"
+}
