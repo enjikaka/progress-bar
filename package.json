@@ -1,6 +1,6 @@
 {
 	"name": "@enjikaka/progress-bar",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A small 60 FPS smooth progress bar. Usig the Web Animation API.",
 	"scripts": {
 		"build": "make build",
